@@ -2,7 +2,7 @@ const express = require("express");
 const mangoose = require("mongoose");
 const keys = require("./config/keys");
 const app = express();
-const cookieSession = require("cookie-session");
+const cookieSession = require("express-session");
 const passport = require("passport");
 require("./models/User");
 require("./services/passport");
