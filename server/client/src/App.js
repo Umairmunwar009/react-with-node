@@ -9,18 +9,22 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <a href="/auth/google">Sign in with Google</a>
+        <button onClick={handleButtonClick}>Sing in with google</button>
       </header>
     </div>
   );
+};
+function handleButtonClick() {
+  console.log('Button clicked');
+  fetch('http://localhost:5000/auth/google', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.log('Error:', error));
 }
 
 export default App;
