@@ -1,11 +1,11 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
-module.exports = function(app) {
-  console.log('Proxy is running');
+module.exports = function (app) {
   app.use(
-    '/auth/google',
+    '/api',
     createProxyMiddleware({
-      target: 'http://localhost:5000'
+      target: 'http://localhost:5000',
+      changeOrigin: true,
     })
   );
 };

@@ -9,14 +9,15 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <button onClick={handleButtonClick}>Sing in with google</button>
+        {/* <button onClick={handleButtonClick}>Sing in with google</button> */}
+        <a href="/api/auth/google">sign in with google</a>
       </header>
     </div>
   );
 };
 function handleButtonClick() {
   console.log('Button clicked');
-  fetch('http://localhost:5000/auth/google', {
+  fetch('auth/google', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
